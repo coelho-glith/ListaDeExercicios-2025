@@ -5,8 +5,11 @@
         static void Main(string[] args)
         {
 
-            double raio = 3.1;
-            double altura = 10;
+            Console.WriteLine("Escreva o raio do cilindro");
+            double raio = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Ensira a altura do cilindro");
+            double altura = Convert.ToDouble(Console.ReadLine());
 
             double volume = Math.PI * Math.Pow(raio, 2) * altura;
 
