@@ -1,23 +1,36 @@
-﻿namespace Exercicio06
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Exercicio06
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            
+            List<decimal> notas = new List<decimal>();
 
-            Console.WriteLine("Coloque a primeira nota do aluno aqui: ");
-            double primeiraNota = Convert.ToDouble(Console.ReadLine());
+            while (true)
+            {
 
-            Console.WriteLine("Coloque a segunda nota do aluno aqui: ");
-            double segundaNota = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Digite uma nota: ");
+                decimal nota = decimal.Parse(Console.ReadLine());
 
-            Console.WriteLine("Coloque a terceira nota do aluno aqui: ");
-            double terceiraNota = Convert.ToDouble(Console.ReadLine());
+                nota = 1 / nota;
 
-            Console.WriteLine("Coloque a quarta nota do aluno aqui: ");
-            double quartanota = Convert.ToDouble(Console.ReadLine());
+                notas.Add(nota);
 
-            Math.
+                Console.WriteLine("Deseja adicionar mais uma nota? (s/n)");
+                string resposta = Console.ReadLine();
+
+                if (resposta == "n")
+                {
+                    break;
+                }
+            }
+
+            decimal media = notas.Count / notas.Sum();
+
+            Console.WriteLine($"A média das notas é: {media}");
 
         }
     }
